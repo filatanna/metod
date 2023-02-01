@@ -20,17 +20,20 @@ public class Main {
             System.out.println("Установите облегченную версию приложения для IOS по ссылке");
         }
     }
-    public static int printDeliveryTime(int deliveryDistance) {
+    public static int printDeliveryTime(int deliveryDistance, int deliveryDays) {
+           deliveryDays = 0;
            if (deliveryDistance < 20) {
-            System.out.println(" Потребуется 1 день");
-        } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
-            System.out.println("Потребуется 2 дня.");
-        } else if (deliveryDistance >= 60 && deliveryDistance <= 100) {
-            System.out.println("Потребуется 3 дня");
-        } else {
-            System.out.println(" Нет доставки.");
-        }
-           return deliveryDistance;
+               deliveryDays = deliveryDays + 1;
+                     }
+           else if (deliveryDistance >= 20 && deliveryDistance < 60) {
+               deliveryDays = deliveryDays + 2;
+
+           }
+            else if (deliveryDistance >= 60 && deliveryDistance <= 100) {
+               deliveryDays = deliveryDays + 3;
+
+           }
+            return deliveryDays;
     }
 
     public static void main(String[] args) {
@@ -51,8 +54,15 @@ public class Main {
     }
     public static void task3(){
         System.out.println("Задача 3.");
-        int deliveriDistance = 95;
-        printDeliveryTime(deliveriDistance);
+        int deliveryDistance = 95;
+        int deliveryDays =0;
+        deliveryDays =  printDeliveryTime(deliveryDistance,deliveryDays);
+           if ( deliveryDays ==0) {
+            System.out.println("Доставки нет");}
+        else {
+            System.out.println(" Потребуется дней " + deliveryDays);
+        }
+
         }
 
 }
