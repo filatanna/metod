@@ -20,8 +20,8 @@ public class Main {
             System.out.println("Установите облегченную версию приложения для IOS по ссылке");
         }
     }
-    public static int printDeliveryTime(int deliveryDistance, int deliveryDays) {
-           deliveryDays = 0;
+    public static int printDeliveryTime(int deliveryDistance) {
+           int deliveryDays = 0;
            if (deliveryDistance < 20) {
                deliveryDays = deliveryDays + 1;
                      }
@@ -56,7 +56,7 @@ public class Main {
         System.out.println("Задача 3.");
         int deliveryDistance = 95;
         int deliveryDays =0;
-        deliveryDays =  printDeliveryTime(deliveryDistance,deliveryDays);
+        deliveryDays =  printDeliveryTime(deliveryDistance);
            if ( deliveryDays ==0) {
             System.out.println("Доставки нет");}
         else {
